@@ -1,114 +1,100 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+const exampleData = [
+  {
+    id: 1,
+    lastname: "Toivgoo",
+    firstname: "Chinguun",
+    alive: true,
+    height: 185,
+    image: "https://4kwallpapers.com/images/walls/thumbs_3t/17565.jpeg"
+  },
+  {
+    id: 2,
+    lastname: "Sanchir",
+    firstname: "Erkhes",
+    alive: true,
+    height: 180,
+    image: "https://4kwallpapers.com/images/walls/thumbs_3t/14110.jpeg"
+  },
+  {
+    id: 3,
+    lastname: "Gankhuyag",
+    firstname: "Khantushig",
+    alive: true,
+    height: 160,
+    image: "https://4kwallpapers.com/images/walls/thumbs_3t/19389.jpg"
+  },
+  {
+    id: 4,
+    lastname: "Akira",
+    firstname: "Bataa",
+    alive: true,
+    height: 170,
+    image: "https://4kwallpapers.com/images/walls/thumbs_3t/13937.png"
+  },
+  {
+    id: 5,
+    lastname: "Nurbolsin",
+    firstname: "Aidaulet",
+    alive: true,
+    height: 175,
+    image: "https://images2.alphacoders.com/115/115702.jpg"
+  },
+  {
+    id: 6,
+    lastname: "Altankhuyag",
+    firstname: "Anand",
+    alive: true,
+    height: 185,
+    image: "https://wallpapercave.com/wp/wp10907178.jpg"
+  },
+  {
+    id: 7,
+    lastname: "Soko",
+    firstname: "Soyombo",
+    alive: true,
+    height: 185,
+    image: "https://t3.ftcdn.net/jpg/00/95/88/18/360_F_95881881_GfFcRK99MwPrErJa6auP9opHxpT6lQZs.jpg"
+  },
+  {
+    id: 8,
+    lastname: "Narka",
+    firstname: "Naran-Erdene",
+    alive: true,
+    height: 170,
+    image: "https://cdn.mongolia-guide.com/generated/aimag/yB5tmMud3F7rJsh124LfK4ML8rLIdCKXHqTaw3tX_1920_1000.jpeg"
+  },
+  {
+    id: 9,
+    lastname: "Ayden",
+    firstname: "Ayden-Anand",
+    alive: true,
+    height: 180,
+    image: "https://i.ytimg.com/vi/oNNBgSGwTGY/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLBM8biIHTnnC51EjQL9Ih9jdSWMuQ"
+  },
+  {
+    id: 10,
+    lastname: "Anduul",
+    firstname: "Anduul",
+    alive: true,
+    height: 170,
+    image: "https://4kwallpapers.com/images/wallpapers/yhwach-bleach-5k-3840x2160-19886.jpg"
+  },
+];
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export default function Home() {
-  return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              pages/index.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+export default function 
+const a = exampleData;
+console.log("length --->", exampleData.length);
+return (
+  <div className="p-5 grid grid-cols-4 justify-between gap-10">
+   {exampleData.map((element, index) =>
+  <div className="flex flex-col p-3 rounded-lg text-black shadow-md w-60 h-50 border-white border shadow-lg shadow-blue-500">
+  <img src={element.image} className="object-cover rounded"/>
+  <div className="flex justify-center">
+  <p className="text-white font-semibold ">{element.firstname}</p>
+                    </div>
+   <p className="text-white ml-2">Lastname: {element.lastname}</p>
+   <p className="text-blue-700 ml-2">Height: {element.height}</p>
+                    </div>
+            )}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
-}
+    );
