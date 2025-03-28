@@ -333,7 +333,7 @@ export default function Lab4() {
       <div className="w-full mt-6">
         {!toggle ? (
          
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-4 pl-[130px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-4">
             {filterData.length > 0 ? (
               filterData.map((element, index) => (
                 <div
