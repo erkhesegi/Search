@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRouter } from 'next/navigation';
 
 const exampleData = [
   {
@@ -306,6 +307,7 @@ const exampleData = [
 export default function Lab4() {
   const [toggle, setToggle] = useState(false);
   const [name, setName] = useState("");
+  const router = useRouter();
 
   const filterData = exampleData.filter((element) =>
     element.firstname.toLowerCase().includes(name.toLowerCase())
@@ -328,6 +330,13 @@ export default function Lab4() {
       >
         Switch
       </button>
+
+      <button
+  className="p-6 bg-transparent border-2 border-white text-white rounded-lg text-xl font-semibold transition-all duration-300 hover:bg-white hover:text-black hover:scale-105"
+  onClick={() => router.push('/')}
+>
+  Return
+</button>
 
  
       <div className="w-full mt-6">
