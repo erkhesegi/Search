@@ -45,6 +45,13 @@ export default function Lab5() {
         >
           Lab 4
         </button>
+
+        <button 
+          className="p-8 bg-transparent border-2 border-white text-white rounded-xl text-2xl font-semibold transition-all duration-300 hover:bg-orange-300 hover:text-black hover:scale-110 hover:shadow-orange-300 shadow-lg"
+          onClick={() => router.push('/11v/folder/toki')}
+        >
+          Toki
+        </button>
       </div>
     </div>
   );

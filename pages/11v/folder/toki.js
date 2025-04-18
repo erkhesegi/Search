@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
+import { useRouter } from 'next/navigation';
 
-export default function Toki() {
+export default function Toki() {  
   useEffect(() => {
     document.querySelectorAll("[data-scroll-to]").forEach((item) => {
       item.addEventListener("click", () => {
@@ -17,15 +18,17 @@ export default function Toki() {
       });
     });
   }, []);
+  const router = useRouter();
 
   return (
     <div id="appbar" className="w-full">
-      {/* Sticky Navbar */}
+
       <div className="bg-white h-[80px] w-full flex items-center justify-between px-4 sm:px-10 md:px-20 sticky top-0 shadow-md z-50">
         <img
           className="w-[120px] sm:w-[100px] hover:scale-105 transition duration-300"
           src="https://www.toki.mn/wp-content/uploads/2022/08/Asset-1@3x.png"
           alt="Toki Logo"
+          onClick={() => router.push('/')}
         />
         <div className="hidden sm:flex space-x-5 flex-wrap justify-end text-sm">
           <p className="text-black hover:text-orange-300 cursor-pointer" data-scroll-to="#section1">Үйлчилгээ</p>
@@ -35,7 +38,6 @@ export default function Toki() {
         </div>
       </div>
 
-      {/* Banner Section */}
       <div className="flex flex-col justify-center items-center bg-orange-100 w-full py-10 px-4 text-center">
         <p className="font-light text-black text-lg sm:text-xl mb-6">
           ХЭРЭГЦЭЭТ ҮЙЛЧИЛГЭЭ НЭГ ДООРООС...
@@ -59,7 +61,6 @@ export default function Toki() {
         </div>
       </div>
 
-      {/* Service Section */}
       <div id="section1" className="bg-gray-100 w-full py-16 px-6 md:px-10 flex flex-col md:flex-row justify-center items-center gap-10">
         <img
           className="w-full max-w-[500px] rounded-lg shadow-lg"
@@ -76,7 +77,6 @@ export default function Toki() {
         </div>
       </div>
 
-      {/* Toki Pay Section */}
       <div id="section2" className="bg-orange-100 w-full py-16 px-6 md:px-20 flex flex-col md:flex-row justify-center items-center gap-10">
         <div className="text-left md:text-right max-w-md">
           <h2 className="text-orange-300 text-2xl font-semibold mb-4">Toki Pay</h2>
@@ -93,7 +93,6 @@ export default function Toki() {
         />
       </div>
 
-      {/* Toki Shop Section */}
       <div id="section3" className="bg-gray-100 w-full py-16 px-6 md:px-10 flex flex-col md:flex-row justify-center items-center gap-10">
         <img
           className="w-full max-w-[500px] rounded-lg shadow-md"
@@ -109,7 +108,6 @@ export default function Toki() {
         </div>
       </div>
 
-      {/* Toki App Benefits Section */}
       <div id="section4" className="bg-white w-full py-16 px-4 flex flex-col justify-center items-center space-y-4 text-center">
         <p className="text-orange-300 text-xl sm:text-2xl font-semibold">
           Toki апп өдөр бүр танд тусална
@@ -120,14 +118,12 @@ export default function Toki() {
         </p>
       </div>
 
-      {/* Benefits Button */}
       <div className="bg-orange-100 w-full py-8 flex flex-col justify-center items-center">
         <div className="bg-amber-400 rounded-full px-8 py-2 font-bold cursor-pointer hover:bg-amber-300 transition duration-300 text-sm">
           ДАВУУ ТАЛ
         </div>
       </div>
 
-      {/* Footer */}
       <div className="bg-black w-full py-8 px-6 sm:px-12 md:px-20 flex flex-col md:flex-row items-center justify-between text-xs space-y-4 md:space-y-0 text-center md:text-left">
         <img
           className="w-[80px] hover:scale-105 transition duration-300"
