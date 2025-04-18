@@ -71,7 +71,7 @@ const exampleData = [
     items: [
       {
         id: 11,
-        name: "Vodka",
+        name: "Camera",
       },
     ],
     image:
@@ -86,7 +86,7 @@ const exampleData = [
     items: [
       {
         id: 11,
-        name: "Laptop",
+        name: "Perfume",
       },
     ],
     image:
@@ -101,7 +101,7 @@ const exampleData = [
     items: [
       {
         id: 11,
-        name: "Glasses",
+        name: "Tymbark",
       },
     ],
     image:
@@ -146,7 +146,7 @@ const exampleData = [
     items: [
       {
         id: 11,
-        name: "Pen",
+        name: "Mac",
       },
     ],
     image:
@@ -161,7 +161,7 @@ const exampleData = [
     items: [
       {
         id: 11,
-        name: "Pen",
+        name: "Piroshki",
       },
     ],
     image:
@@ -176,7 +176,7 @@ const exampleData = [
     items: [
       {
         id: 11,
-        name: "Pen",
+        name: "Glasses",
       },
     ],
     image:
@@ -191,7 +191,7 @@ const exampleData = [
     items: [
       {
         id: 11,
-        name: "Pen",
+        name: "Glasses",
       },
     ],
     image:
@@ -206,7 +206,7 @@ const exampleData = [
     items: [
       {
         id: 11,
-        name: "Pen",
+        name: "Airpods",
       },
     ],
     image:
@@ -221,7 +221,7 @@ const exampleData = [
     items: [
       {
         id: 11,
-        name: "Pen",
+        name: "iPad",
       },
     ],
     image:
@@ -236,7 +236,7 @@ const exampleData = [
     items: [
       {
         id: 11,
-        name: "Pen",
+        name: "Barca",
       },
     ],
     image:
@@ -251,7 +251,7 @@ const exampleData = [
     items: [
       {
         id: 11,
-        name: "Pen",
+        name: "Math",
       },
     ],
     image: "https://www.arty.mn/files/img/tide8.jpg",
@@ -265,7 +265,7 @@ const exampleData = [
     items: [
       {
         id: 11,
-        name: "Pen",
+        name: "Violin",
       },
     ],
     image:
@@ -280,7 +280,7 @@ const exampleData = [
     items: [
       {
         id: 11,
-        name: "Pen",
+        name: "Real",
       },
     ],
     image:
@@ -295,7 +295,7 @@ const exampleData = [
     items: [
       {
         id: 11,
-        name: "Pen",
+        name: "Book",
       },
     ],
     image:
@@ -332,7 +332,7 @@ export default function Lab4() {
       </button>
 
       <button
-  className="p-6 bg-transparent border-2 border-white text-white rounded-lg text-xl font-semibold transition-all duration-300 hover:bg-white hover:text-black hover:scale-105"
+  className="p-6 bg-transparent border-2 border-white text-white rounded-lg text-xl font-semibold transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 ml-[125px] mt-[20px]"
   onClick={() => router.push('/')}
 >
   Return
