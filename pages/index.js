@@ -52,6 +52,13 @@ export default function Lab5() {
         >
           Toki
         </button>
+
+        <button 
+          className="p-8 bg-transparent border-2 border-white text-white rounded-xl text-2xl font-semibold transition-all duration-300 hover:bg-purple-300 hover:text-black hover:scale-110 hover:shadow-purple-300 shadow-lg"
+          onClick={() => router.push('/uliral4/lab2')}
+        >
+          Dashboard
+        </button>
       </div>
     </div>
   );
