@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { useRouter } from 'next/navigation';
 
 const data = [
     {
@@ -109,75 +110,97 @@ const data = [
 
 export default function Lab2() {
     const [search, setSearch] = useState(""); 
+    const router = useRouter();
 
     const filterData = data.filter((item) =>
         item.name.toLowerCase().includes(search.toLowerCase())
     );
 
     return (
-        <div className="flex gap-x-4 p-4 bg-white h-screen">
-            <div className="w-[20%] bg-gray-100 h-[95vh] rounded-xl shadow-md">
-                <img src="https://nhs.edu.mn/favicon.ico" className="mt-[30px] ml-[80px] w-40 h-40" />
-                <p className="text-indigo-600 ml-[40px] mt-[10px] text-xl font-bold">Nest Education IT School</p>
-                <p className="text-gray-800 ml-[90px] mt-[10px] text-xl font-bold">Санчир Эрхэс</p>
-                <p className="text-gray-800 ml-[110px] mt-[10px] text-xl font-bold">Анги: 11В</p>
+        <div className="flex h-screen bg-gray-50">
+            <div className="w-1/5 bg-white shadow-xl rounded-lg p-6">
+                <div className="text-center">
+                    <img src="https://nhs.edu.mn/favicon.ico" className="w-32 h-32 mx-auto rounded-full mb-4" />
+                    <h2 className="text-indigo-600 text-2xl font-semibold">Nest Education IT School</h2>
+                    <p className="text-gray-800 mt-2 text-lg font-semibold">Санчир Эрхэс</p>
+                    <p className="text-gray-800 mt-1 text-lg">Анги: 11В</p>
+                </div>
+    
+                <div className="mt-8 space-y-4">
+                    <button
+                        onClick={() => router.push('/uliral4/lab2')}
+                        className="w-full py-3 bg-indigo-600 text-white rounded-lg text-lg font-medium transition duration-300 hover:bg-indigo-500 hover:shadow-lg focus:outline-none"
+                    >
+                        Go to Lab 2
+                    </button>
+                    <button
+                        onClick={() => router.push('/uliral4/lab3')}
+                        className="w-full py-3 bg-indigo-600 text-white rounded-lg text-lg font-medium transition duration-300 hover:bg-indigo-500 hover:shadow-lg focus:outline-none"
+                    >
+                        Go to Lab 3
+                    </button>
+                </div>
             </div>
-
-            <div className="w-[80%] h-[95vh] bg-gray-100 rounded-2xl p-6 flex flex-col gap-8 shadow-lg">
-                <div className="flex gap-6 items-center">
-                    <div className="flex items-center justify-center h-12 w-48 bg-gray-700 rounded-lg text-white font-semibold">
-                        Харилцагчид
+    
+            <div className="w-4/5 bg-gray-100 p-6 rounded-lg shadow-2xl">
+                <div className="flex justify-between items-center mb-6">
+                    <div className="flex items-center space-x-4">
+                        <div className="bg-gray-700 text-white px-6 py-2 rounded-lg font-semibold text-lg">
+                            Харилцагчид
+                        </div>
+    
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            className="h-12 px-4 py-2 w-96 rounded-lg border border-gray-300 shadow-md focus:ring-2 focus:ring-blue-300 outline-none"
+                        />
                     </div>
-
-                    <input
-                        type="text"
-                        placeholder="Search"
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        className="h-12 w-[480px] px-4 py-2 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
-                    />
-
-                    <div className="h-12 w-[360px] flex items-center justify-center bg-yellow-500 text-white rounded-lg font-medium">
+                    <div className="bg-yellow-500 text-white py-3 px-6 rounded-lg text-lg font-medium cursor-pointer">
                         Барааг бүртгэх
                     </div>
                 </div>
-
-                <div className="flex-1 bg-gray-200 p-4 rounded-xl overflow-y-auto">
-                    <div className="flex flex-col gap-4">
-                        {filterData.map((item, index) => (
-                            <div
-                                key={index}
-                                className="bg-white rounded-xl p-4 flex flex-wrap items-center justify-between shadow-md"
-                            >
-                                <div className="h-5 w-5 border border-yellow-300 rounded-sm"></div>
-
-                                <img
-                                    src={item.image}
-                                    alt={item.name}
-                                    className="h-12 w-12 object-cover rounded"
-                                />
-
-                                <div className="w-[120px] text-gray-700 truncate">{item.name}</div>
-                                <div className="w-[100px] text-gray-700 truncate">{item.price}</div>
-                                <div className="w-[100px] text-gray-700 truncate">{item.color}</div>
-                                <div className="w-[120px] text-gray-700 truncate">{item.items.map((item) => (
-                                     <div className="w-[100px] text-gray-700 truncate">{item.name}</div>
-                                ))}</div>
-                                <div className="w-[120px] text-gray-700 truncate">{item.items.map((item) => (
-                                     <div className="w-[100px] text-gray-700 truncate">{item.price}</div>
-                                ))}</div>
-
-                                
-                            </div>
-                        ))}
-                        {filterData.length === 0 && (
-                            <div className="text-white">Nothing here</div>
+    
+                <div className="h-[80vh] bg-gray-200 rounded-lg p-4 overflow-auto">
+                    <div className="space-y-6">
+                        {filterData.length === 0 ? (
+                            <div className="text-center text-gray-600">Nothing here</div>
+                        ) : (
+                            filterData.map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="bg-white p-4 rounded-lg flex justify-between items-center shadow-md"
+                                >
+                                    <div className="flex items-center space-x-4">
+                                        <div className="h-5 w-5 border border-yellow-300 rounded-sm"></div>
+                                        <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded-full" />
+                                        <div className="w-[120px] text-gray-700 truncate">{item.name}</div>
+                                        <div className="w-[100px] text-gray-700 truncate">{item.price}</div>
+                                        <div className="w-[100px] text-gray-700 truncate">{item.color}</div>
+                                    </div>
+    
+                                    <div className="flex space-x-4">
+                                        <div className="w-[120px]">
+                                            {item.items.map((subItem, subIndex) => (
+                                                <div key={subIndex} className="text-gray-700 truncate">{subItem.name}</div>
+                                            ))}
+                                        </div>
+                                        <div className="w-[120px]">
+                                            {item.items.map((subItem, subIndex) => (
+                                                <div key={subIndex} className="text-gray-700 truncate">{subItem.price}</div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
                         )}
                     </div>
                 </div>
             </div>
         </div>
-    );
+    );    
+    
 }
 
 
