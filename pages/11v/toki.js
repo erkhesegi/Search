@@ -3,7 +3,9 @@
 import { useEffect } from "react";
 import { useRouter } from 'next/navigation';
 
-export default function Toki() {  
+export default function Toki() {
+  const router = useRouter();
+  
   useEffect(() => {
     document.querySelectorAll("[data-scroll-to]").forEach((item) => {
       item.addEventListener("click", () => {
@@ -18,7 +20,6 @@ export default function Toki() {
       });
     });
   }, []);
-  const router = useRouter();
 
   return (
     <div id="appbar" className="w-full">
