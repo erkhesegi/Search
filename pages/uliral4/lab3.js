@@ -10,19 +10,33 @@ export default function Lab3() {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const response = await fetch(
-                    "https://mongol-api-rest.vercel.app/clothes"
-                );
-                const result = await response.json();
-                setData(result.clothes);
+                const clothes = await fetch("https://mongol-api-rest.vercel.app/clothes");
+                const instruments = await fetch("https://mongol-api-rest.vercel.app/instruments");
+                const tools = await fetch("https://mongol-api-rest.vercel.app/historicaltools");
+                const ethnic = await fetch("https://mongol-api-rest.vercel.app/ethnicgroups");
+                const provinces = await fetch("https://mongol-api-rest.vercel.app/provinces");
+                const figures = await fetch("https://mongol-api-rest.vercel.app/historicalfigures");
+                const attractions = await fetch("https://mongol-api-rest.vercel.app/touristattractions");
+    
+                const result1 = await clothes.json();
+                const result2 = await instruments.json();
+                const result3 = await tools.json();
+                const result4 = await ethnic.json();
+                const result5 = await provinces.json();
+                const result6 = await figures.json();
+                const result7 = await attractions.json();
+
+                setData({...result1, ...result2, ...result3, ...result4, ...result5, ...result6, ...result7});
+    
                 setLoading(false);
             } catch (error) {
-                console.log(error);
+                console.log(false);
             }
         };
-
+    
         fetchData();
     }, []);
+    
 
     if (loading) {
         return (
